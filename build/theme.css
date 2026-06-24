@@ -237,6 +237,45 @@ html, body { background: #05080f; }
 .mock-total span { font-family: var(--f-mono); font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); }
 .mock-total b { font-family: var(--f-display); font-style: italic; font-size: 56px; font-weight: 400; }
 
+/* ── logo lockup (real PNG) ──────────────────────────────────────────────── */
+.logo-chip {
+  background: #fff; border-radius: 14px; padding: 12px 22px;
+  display: inline-flex; align-items: center;
+  box-shadow: 0 10px 30px -14px rgba(0,0,0,0.5);
+}
+.theme-light .logo-chip { background: transparent; padding: 0; box-shadow: none; }
+.logo-chip img { height: 54px; width: auto; display: block; }
+
+/* ── CTA contact block (website + WhatsApp) ──────────────────────────────── */
+.contact { display: flex; flex-direction: column; gap: 18px; margin-top: 8px; }
+.contact-row {
+  display: inline-flex; align-items: center; gap: 16px;
+  font-family: var(--f-mono); font-size: 27px; color: var(--text);
+  letter-spacing: 0.01em;
+}
+.contact-ic {
+  width: 52px; height: 52px; border-radius: 13px; flex: none;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--green-soft); color: var(--green-bright);
+}
+.contact-ic svg { width: 28px; height: 28px; }
+.contact-row b { font-weight: 600; }
+.contact-row .wa { color: var(--green-bright); }
+.lang-ur .contact { align-items: flex-end; }
+.lang-ur .contact-row { direction: ltr; }
+
+/* ── QR placeholder (FBR invoice prop) ───────────────────────────────────── */
+.qr {
+  width: 92px; height: 92px; border-radius: 12px; flex: none;
+  background:
+    repeating-conic-gradient(var(--text) 0% 25%, transparent 0% 50%) 0 0 / 22px 22px;
+  opacity: 0.85; border: 6px solid var(--bg-alt); box-shadow: 0 0 0 1px var(--card-line);
+}
+
+/* ── card icon variants ──────────────────────────────────────────────────── */
+.card.big { padding: 34px 32px; }
+.lang-ur .card { text-align: right; }
+
 /* ── utilities ───────────────────────────────────────────────────────────── */
 .grow { flex: 1 1 auto; }
 .mt-auto { margin-top: auto; }
