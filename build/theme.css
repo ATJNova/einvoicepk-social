@@ -1,0 +1,261 @@
+/* ===========================================================================
+   einvoicepk — social carousel design system
+   Tokens lifted verbatim from frontend/src/index.css (public-site --c-* layer).
+   EN = dark  ·  UR = light. One seamless navy in dark; warm white in light.
+   Slide canvas: 1080 × 1350 (Instagram / Facebook 4:5).
+   =========================================================================== */
+
+/* fonts.css (self-hosted woff2) is imported by each slide before this file. */
+
+:root {
+  --f-display: 'Instrument Serif', Georgia, serif;
+  --f-sans: 'Geist', system-ui, -apple-system, sans-serif;
+  --f-mono: 'Geist Mono', ui-monospace, monospace;
+  --f-urdu: 'Noto Nastaliq Urdu', 'Noto Naskh Arabic', serif;
+
+  --navy: #1A3A7C;
+  --green: #28A745;
+}
+
+/* ── DARK (EN) ───────────────────────────────────────────────────────────── */
+.theme-dark {
+  --bg: #0A1428;
+  --bg-alt: #0F1E38;
+  --text: #EAF0FA;
+  --mute: rgba(234,240,250,0.70);
+  --faint: rgba(234,240,250,0.44);
+  --line: rgba(255,255,255,0.09);
+  --line2: rgba(255,255,255,0.15);
+  --card: rgba(255,255,255,0.035);
+  --card-line: rgba(255,255,255,0.10);
+  --eyebrow: #8FE8A8;
+  --accent-grad: linear-gradient(100deg,#3BD968 0%,#5BA8D6 60%,#9DB6E8 100%);
+  --green-bright: #3BD968;
+  --green-soft: rgba(59,217,104,0.14);
+  --rail-node: #16294A;
+  --aurora: conic-gradient(from 200deg at 50% 38%,
+      transparent 0deg,#28A74524 65deg,#1A3A7C40 150deg,#6E2A6E24 235deg,transparent 360deg);
+  --grid-line: rgba(255,255,255,0.045);
+  --seal: #3BD968;
+  color-scheme: dark;
+}
+
+/* ── LIGHT (UR) ──────────────────────────────────────────────────────────── */
+.theme-light {
+  --bg: #FFFFFF;
+  --bg-alt: #F6F8F5;
+  --text: #0F1410;
+  --mute: rgba(15,20,16,0.64);
+  --faint: rgba(15,20,16,0.46);
+  --line: rgba(15,20,16,0.11);
+  --line2: rgba(15,20,16,0.17);
+  --card: #FFFFFF;
+  --card-line: rgba(15,20,16,0.10);
+  --eyebrow: #1E8538;
+  --accent-grad: linear-gradient(100deg,#28A745 0%,#1E8538 55%,#1A3A7C 100%);
+  --green-bright: #1E8538;
+  --green-soft: rgba(40,167,69,0.10);
+  --rail-node: #FFFFFF;
+  --aurora: conic-gradient(from 200deg at 50% 38%,
+      transparent 0deg,#28A7451f 65deg,#1A3A7C18 150deg,#6E2A6E14 235deg,transparent 360deg);
+  --grid-line: rgba(15,20,16,0.05);
+  --seal: #1E8538;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { background: #05080f; }
+
+.slide {
+  position: relative;
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--f-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+/* ── background layers ───────────────────────────────────────────────────── */
+.bg-aurora {
+  position: absolute; inset: -20% -10% auto -10%; height: 78%;
+  background: var(--aurora);
+  filter: blur(8px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+.bg-grid {
+  position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(0deg, transparent 0, transparent 53px, var(--grid-line) 53px, var(--grid-line) 54px);
+  pointer-events: none;
+}
+.bg-vignette {
+  position: absolute; inset: 0;
+  background: radial-gradient(120% 80% at 50% 0%, transparent 55%, rgba(0,0,0,0.28) 100%);
+  pointer-events: none;
+}
+.theme-light .bg-vignette {
+  background: radial-gradient(120% 80% at 50% 100%, transparent 60%, rgba(15,20,16,0.05) 100%);
+}
+
+/* ── frame ───────────────────────────────────────────────────────────────── */
+.frame {
+  position: absolute; inset: 0;
+  padding: 84px 88px 76px;
+  display: flex; flex-direction: column;
+  z-index: 2;
+}
+
+/* ── header lockup ───────────────────────────────────────────────────────── */
+.brand {
+  display: flex; align-items: center; gap: 16px;
+}
+.brand img { width: 58px; height: 58px; display: block; }
+.brand-name {
+  font-size: 27px; font-weight: 600; letter-spacing: -0.02em; line-height: 1;
+}
+.brand-name .pk { color: var(--green-bright); }
+.brand-tag {
+  font-family: var(--f-mono); font-size: 12.5px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--faint); margin-top: 5px;
+}
+.head {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.fbr-chip {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 9px 16px 9px 13px; border-radius: 999px;
+  background: var(--green-soft); border: 1px solid var(--card-line);
+  font-family: var(--f-mono); font-size: 13px; letter-spacing: 0.06em;
+  color: var(--eyebrow); white-space: nowrap;
+}
+.fbr-chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green-bright); box-shadow: 0 0 10px var(--green-bright); }
+
+/* ── eyebrow ─────────────────────────────────────────────────────────────── */
+.eyebrow {
+  font-family: var(--f-mono); font-size: 22px; font-weight: 500;
+  letter-spacing: 0.26em; text-transform: uppercase; color: var(--eyebrow);
+  display: flex; align-items: center; gap: 18px;
+}
+.eyebrow::before {
+  content: ""; width: 46px; height: 2px; background: var(--green-bright); display: inline-block;
+}
+
+/* ── display type ────────────────────────────────────────────────────────── */
+.display {
+  font-family: var(--f-display); font-style: italic; font-weight: 400;
+  letter-spacing: -0.015em; line-height: 0.99; color: var(--text);
+}
+.h-cover { font-size: 112px; }
+.h-step  { font-size: 84px; line-height: 1.0; }
+.grad {
+  background: var(--accent-grad);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.lead {
+  font-size: 31px; line-height: 1.46; color: var(--mute);
+  font-weight: 400; letter-spacing: -0.005em; max-width: 760px;
+}
+.lead strong { color: var(--text); font-weight: 600; }
+
+/* ── footer ──────────────────────────────────────────────────────────────── */
+.foot {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 26px; border-top: 1px solid var(--line);
+  font-family: var(--f-mono); font-size: 16px; color: var(--faint);
+  letter-spacing: 0.04em;
+}
+.foot .site { color: var(--mute); }
+.foot .idx { color: var(--text); }
+.foot .idx b { color: var(--green-bright); }
+.swipe { display: inline-flex; align-items: center; gap: 10px; color: var(--mute); }
+.swipe svg { width: 30px; height: 14px; }
+
+/* ── step number ghost ───────────────────────────────────────────────────── */
+.stepnum {
+  font-family: var(--f-display); font-style: italic;
+  font-size: 280px; line-height: 0.7; color: var(--text);
+  opacity: 0.05; position: absolute; top: 120px; right: 60px; z-index: 0;
+}
+
+/* ── step rail (vertical numbered list) ──────────────────────────────────── */
+.rail { display: flex; flex-direction: column; gap: 30px; }
+.rail-item { display: flex; gap: 26px; align-items: flex-start; }
+.rail-node {
+  flex: none; width: 56px; height: 56px; border-radius: 50%;
+  background: var(--rail-node); border: 1.5px solid var(--card-line);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-mono); font-size: 22px; font-weight: 600; color: var(--green-bright);
+}
+.rail-item.on .rail-node { background: var(--green); color: #fff; border-color: var(--green); box-shadow: 0 6px 20px -6px rgba(40,167,69,0.6); }
+.rail-txt h3 { font-size: 30px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 7px; }
+.rail-txt p { font-size: 22px; line-height: 1.42; color: var(--mute); max-width: 640px; }
+
+/* ── feature cards ───────────────────────────────────────────────────────── */
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.card {
+  background: var(--card); border: 1px solid var(--card-line);
+  border-radius: 22px; padding: 32px 30px;
+}
+.card .ico {
+  width: 60px; height: 60px; border-radius: 15px; margin-bottom: 22px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--green-soft); color: var(--green-bright);
+}
+.card .ico svg { width: 30px; height: 30px; }
+.card h3 { font-size: 28px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 10px; }
+.card p { font-size: 20px; line-height: 1.42; color: var(--mute); }
+
+/* ── FBR verified notary seal ────────────────────────────────────────────── */
+.seal { width: 100%; height: 100%; }
+.seal-ring { fill: none; stroke: var(--seal); stroke-width: 2; }
+.seal-ring-i { stroke-width: 1; opacity: 0.55; }
+.seal-text { font-family: var(--f-mono); font-size: 8.2px; font-weight: 600; letter-spacing: 2.4px; fill: var(--seal); text-transform: uppercase; }
+.seal-check { fill: none; stroke: var(--seal); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ── mock invoice card (hero prop) ───────────────────────────────────────── */
+.mock {
+  background: var(--bg-alt); border: 1px solid var(--card-line);
+  border-radius: 26px; padding: 34px 36px; box-shadow: 0 40px 80px -34px rgba(0,0,0,0.6);
+}
+.theme-light .mock { box-shadow: 0 40px 80px -40px rgba(15,20,16,0.30); }
+.mock-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 26px; }
+.mock-id { font-family: var(--f-mono); font-size: 18px; color: var(--faint); letter-spacing: 0.04em; }
+.mock-badge {
+  display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px;
+  background: var(--green-soft); color: var(--eyebrow);
+  font-family: var(--f-mono); font-size: 15px; letter-spacing: 0.04em;
+}
+.mock-row { display: flex; justify-content: space-between; padding: 16px 0; border-bottom: 1px dashed var(--line); }
+.mock-row span { font-size: 21px; color: var(--mute); }
+.mock-row b { font-size: 21px; font-family: var(--f-mono); color: var(--text); font-weight: 500; }
+.mock-total { display: flex; justify-content: space-between; align-items: baseline; padding-top: 22px; }
+.mock-total span { font-family: var(--f-mono); font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); }
+.mock-total b { font-family: var(--f-display); font-style: italic; font-size: 56px; font-weight: 400; }
+
+/* ── utilities ───────────────────────────────────────────────────────────── */
+.grow { flex: 1 1 auto; }
+.mt-auto { margin-top: auto; }
+.gap-s > * + * { margin-top: 20px; }
+.gap-m > * + * { margin-top: 30px; }
+.gap-l > * + * { margin-top: 44px; }
+
+/* ── Urdu (UR) overrides — RTL, Nastaliq, looser leading ──────────────────── */
+.lang-ur { direction: rtl; }
+.lang-ur .display { font-family: var(--f-urdu); font-style: normal; line-height: 1.7; letter-spacing: 0; }
+.lang-ur .h-cover { font-size: 88px; }
+.lang-ur .h-step { font-size: 66px; line-height: 1.6; }
+.lang-ur .lead { font-family: var(--f-urdu); line-height: 1.95; font-size: 30px; }
+.lang-ur .rail-txt h3 { font-family: var(--f-urdu); line-height: 1.7; }
+.lang-ur .rail-txt p,
+.lang-ur .card p,
+.lang-ur .card h3 { font-family: var(--f-urdu); line-height: 1.85; }
+.lang-ur .eyebrow::before { display: none; }
+/* keep mono/latin bits LTR inside RTL */
+.lang-ur .foot, .lang-ur .brand-name, .lang-ur .brand-tag,
+.lang-ur .fbr-chip, .lang-ur .mock-id, .lang-ur .mock-row b,
+.lang-ur .eyebrow { direction: ltr; }

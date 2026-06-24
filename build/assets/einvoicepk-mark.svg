@@ -1,0 +1,14 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Invoice document badge, anchored to brand navy + green -->
+  <rect x="4" y="4" width="72" height="72" rx="18" fill="#1A3A7C"/>
+  <rect x="4.75" y="4.75" width="70.5" height="70.5" rx="17.25" stroke="#fff" stroke-opacity="0.14" stroke-width="1.5"/>
+  <!-- document -->
+  <path d="M26 21h20l11 11v23a4 4 0 0 1-4 4H26a4 4 0 0 1-4-4V25a4 4 0 0 1 4-4Z" fill="#fff"/>
+  <path d="M46 21v8a3 3 0 0 0 3 3h8" fill="#E5EAF3"/>
+  <!-- invoice lines -->
+  <rect x="29" y="38" width="22" height="3" rx="1.5" fill="#1A3A7C" fill-opacity="0.30"/>
+  <rect x="29" y="45" width="16" height="3" rx="1.5" fill="#1A3A7C" fill-opacity="0.18"/>
+  <!-- green verified check -->
+  <circle cx="51" cy="52" r="13" fill="#28A745"/>
+  <path d="M45.5 52.2l3.7 3.6 6.6-7.3" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
