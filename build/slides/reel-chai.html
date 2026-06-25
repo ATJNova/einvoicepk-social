@@ -2,122 +2,138 @@
 <link rel="stylesheet" href="../fonts.css">
 <style>
 :root{
-  --green:#28A745; --green-d:#1E8538; --navy:#1A3A7C; --red:#EF4444;
-  --amber:#F59E0B; --ink:#0F1410; --mute:#5b6660;
+  --white:#FFFFFF; --navy:#0F172A; --emerald:#10B981; --crimson:#EF4444;
+  --mute:#64748B; --line:#E2E8F0;
   --f:'Geist',system-ui,sans-serif; --fu:'Noto Nastaliq Urdu',serif; --fm:'Geist Mono',monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{width:1080px;height:1920px;overflow:hidden;background:linear-gradient(160deg,#FFF7EC,#F2F6F1);font-family:var(--f)}
-.stage{position:relative;width:1080px;height:1920px;overflow:hidden;animation-play-state:paused}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#fff;font-family:var(--f)}
+.stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#fff;animation-play-state:paused}
 .stage.go *{animation-play-state:running !important}
 
 /* persistent brand header */
-.brandbar{position:absolute;top:54px;left:0;right:0;display:flex;justify-content:space-between;
-  align-items:center;padding:0 56px;z-index:50}
-.chip{background:#fff;border-radius:16px;padding:12px 20px;display:flex;align-items:center;
-  box-shadow:0 10px 30px -14px rgba(0,0,0,.35)}
-.chip.fbr img{height:64px;display:block}
-.chip.ev img{height:46px;display:block}
+.brandbar{position:absolute;top:58px;left:0;right:0;display:flex;justify-content:space-between;
+  align-items:center;padding:0 60px;z-index:60}
+.chip{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 22px;display:flex;align-items:center;
+  box-shadow:0 14px 34px -20px rgba(15,23,42,.30)}
+.chip.fbr img{height:62px;display:block}
+.chip.ev img{height:44px;display:block}
 
-/* scenes */
 .scene{position:absolute;inset:0;opacity:0;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;text-align:center;padding:140px 80px 120px;
-  animation:fade var(--d) var(--s) both}
-@keyframes fade{0%{opacity:0;transform:scale(1.02)}7%{opacity:1;transform:scale(1)}
-  92%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.99)}}
-
-.s1{--d:3s;--s:0s;z-index:10;background:linear-gradient(160deg,#FFF7EC,#F2F6F1)}
-.s2{--d:6s;--s:3s;z-index:11;background:linear-gradient(160deg,#F6F8F5,#FFFFFF)}
-.s3{--d:3s;--s:9s;z-index:12;background:linear-gradient(160deg,#E9F8EE,#FFFFFF)}
-.s4{--d:3s;--s:12s;z-index:13;background:linear-gradient(160deg,#FFE9E9,#FFF4F4)}
-.s5{--d:2s;--s:15s;z-index:14;background:linear-gradient(160deg,#E9F8EE,#FFFFFF)}
-.s6{z-index:15;background:linear-gradient(155deg,#16306B 0%,#1E8538 75%,#28A745 100%);
-  animation:fadehold 3s 17s both}
-@keyframes fadehold{0%{opacity:0;transform:scale(1.02)}15%{opacity:1;transform:scale(1)}100%{opacity:1;transform:scale(1)}}
+  align-items:center;justify-content:center;text-align:center;padding:200px 90px 150px;
+  background:#fff;animation:fade var(--d) var(--s) both}
+@keyframes fade{0%{opacity:0}6%{opacity:1}94%{opacity:1}100%{opacity:0}}
+.s1{--d:3s;--s:0s;z-index:10}
+.s2{--d:6s;--s:3s;z-index:11}
+.s3{--d:3s;--s:9s;z-index:12}
+.s4{--d:3s;--s:12s;z-index:13}
+.s5{--d:2s;--s:15s;z-index:14}
+.s6{z-index:15;animation:fadehold 3s 17s both}
+@keyframes fadehold{0%{opacity:0}12%{opacity:1}100%{opacity:1}}
 
 /* typography */
-.kick{font-family:var(--fm);font-size:26px;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--green-d);margin-bottom:26px}
-.big{font-size:78px;line-height:1.12;font-weight:700;letter-spacing:-.02em;color:var(--ink)}
-.big .g{color:var(--green-d)}
+.kick{font-family:var(--fm);font-size:25px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--emerald);margin-bottom:30px;font-weight:600}
+.h{font-size:82px;line-height:1.1;font-weight:800;letter-spacing:-.03em;color:var(--navy)}
+.h .g{color:var(--emerald)}
 .ur{font-family:var(--fu);direction:rtl;line-height:1.7}
-.sub{font-size:40px;color:var(--mute);margin-top:26px;font-weight:500}
+.sub{font-size:38px;color:var(--mute);margin-top:28px;font-weight:500}
 
-/* chai cup + steam */
-.chai{position:relative;width:230px;height:200px;margin:0 auto 46px}
-.cup{position:absolute;bottom:0;left:35px;width:160px;height:120px;background:#fff;
-  border:6px solid var(--navy);border-radius:14px 14px 34px 34px}
-.cup:after{content:"";position:absolute;right:-46px;top:24px;width:46px;height:54px;
-  border:6px solid var(--navy);border-left:none;border-radius:0 30px 30px 0}
-.tea{position:absolute;bottom:14px;left:12px;right:12px;height:30px;background:#B5651D;border-radius:8px}
-.steam{position:absolute;left:0;right:0;top:-4px;height:120px}
-.steam span{position:absolute;bottom:0;width:10px;height:70px;background:linear-gradient(transparent,rgba(120,120,120,.5));
-  border-radius:10px;filter:blur(2px);animation:rise 2.2s ease-in-out infinite}
-.steam span:nth-child(1){left:74px;animation-delay:0s}
-.steam span:nth-child(2){left:108px;height:90px;animation-delay:.5s}
-.steam span:nth-child(3){left:142px;animation-delay:1s}
-@keyframes rise{0%{opacity:0;transform:translateY(20px) scaleY(.6)}40%{opacity:.8}
-  100%{opacity:0;transform:translateY(-46px) scaleY(1.2)}}
+/* S1 hook: chai */
+.h1a{animation:swap1 3s 0s both}
+.h1b{position:absolute;animation:swap2 3s 0s both;opacity:0}
+@keyframes swap1{0%{opacity:0;transform:translateY(16px)}10%{opacity:1;transform:none}45%{opacity:1}55%{opacity:0;transform:translateY(-16px)}100%{opacity:0}}
+@keyframes swap2{0%,50%{opacity:0;transform:translateY(16px)}62%{opacity:1;transform:none}100%{opacity:1}}
+.chai{position:relative;width:240px;height:210px;margin:0 auto 50px}
+.cup{position:absolute;bottom:0;left:38px;width:164px;height:122px;background:#fff;
+  border:7px solid var(--navy);border-radius:14px 14px 38px 38px}
+.cup:after{content:"";position:absolute;right:-48px;top:26px;width:48px;height:54px;
+  border:7px solid var(--navy);border-left:none;border-radius:0 30px 30px 0}
+.tea{position:absolute;bottom:16px;left:14px;right:14px;height:30px;background:#A0541E;border-radius:8px}
+.steam span{position:absolute;bottom:122px;width:9px;height:62px;
+  background:linear-gradient(transparent,rgba(100,116,139,.55));border-radius:9px;filter:blur(2px);
+  animation:rise 2.2s ease-in-out infinite}
+.steam span:nth-child(1){left:78px}.steam span:nth-child(2){left:112px;height:84px;animation-delay:.6s}
+.steam span:nth-child(3){left:146px;animation-delay:1.1s}
+@keyframes rise{0%{opacity:0;transform:translateY(18px) scaleY(.6)}40%{opacity:.85}100%{opacity:0;transform:translateY(-48px) scaleY(1.2)}}
 
-/* invoice card */
-.card{width:760px;background:#fff;border:1px solid rgba(15,20,16,.10);border-radius:30px;
-  padding:42px 46px;box-shadow:0 50px 90px -40px rgba(15,20,16,.30)}
-.card .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
-.card .id{font-family:var(--fm);font-size:24px;color:#98a29b;letter-spacing:.05em}
-.badge{font-family:var(--fm);font-size:22px;padding:8px 18px;border-radius:999px;
-  background:rgba(40,167,69,.12);color:var(--green-d)}
-.row{display:flex;justify-content:space-between;padding:22px 0;border-bottom:1px dashed rgba(15,20,16,.12);
-  font-size:30px;opacity:0;transform:translateY(14px)}
-.row b{font-family:var(--fm);font-weight:600;color:var(--ink)}
-.row span{color:var(--mute)}
-.r1{animation:rowin .5s 3.5s both}.r2{animation:rowin .5s 4.1s both}.r3{animation:rowin .5s 4.7s both}
+/* S2 invoice card + cursor */
+.card{width:780px;background:#fff;border:1px solid var(--line);border-radius:32px;
+  padding:46px 50px;box-shadow:0 60px 110px -50px rgba(15,23,42,.35);position:relative}
+.card .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px}
+.card .id{font-family:var(--fm);font-size:23px;color:#94A3B8;letter-spacing:.06em}
+.badge{font-family:var(--fm);font-size:21px;padding:9px 20px;border-radius:999px;background:rgba(16,185,129,.12);color:var(--emerald)}
+.row{display:flex;justify-content:space-between;padding:24px 0;border-bottom:1px dashed var(--line);
+  font-size:30px;opacity:0;transform:translateY(16px)}
+.row b{font-family:var(--fm);font-weight:600;color:var(--navy)}.row span{color:var(--mute)}
+.r1{animation:rowin .55s 3.6s both}.r2{animation:rowin .55s 4.4s both}.r3{animation:rowin .55s 5.2s both}
 @keyframes rowin{to{opacity:1;transform:none}}
-.submit{margin-top:34px;background:var(--green);color:#fff;font-family:var(--fm);font-weight:700;
-  font-size:30px;text-align:center;padding:24px;border-radius:18px;letter-spacing:.04em;
-  animation:press 1.6s 6.6s both}
-@keyframes press{0%,55%{transform:scale(1);filter:brightness(1)}62%{transform:scale(.95);filter:brightness(.9)}
-  70%{transform:scale(1)}100%{transform:scale(1)}}
+.submit{margin-top:38px;background:var(--emerald);color:#fff;font-family:var(--fm);font-weight:700;
+  font-size:30px;text-align:center;padding:26px;border-radius:18px;letter-spacing:.04em;
+  animation:press 1.4s 7s both}
+@keyframes press{0%,60%{transform:scale(1);filter:brightness(1)}70%{transform:scale(.95);filter:brightness(.92)}80%{transform:scale(1)}100%{transform:scale(1)}}
+.cursor{position:absolute;left:50%;top:62%;width:46px;height:46px;z-index:5;opacity:0;
+  animation:curs 4s 3.6s both}
+.cursor svg{width:46px;height:46px;filter:drop-shadow(0 4px 8px rgba(15,23,42,.3))}
+@keyframes curs{0%{opacity:0;transform:translate(120px,160px)}25%{opacity:1}
+  70%{opacity:1;transform:translate(0,0)}78%{transform:translate(0,8px)}85%{transform:translate(0,0)}100%{opacity:0}}
+.ripple{position:absolute;left:50%;top:88%;width:20px;height:20px;border-radius:50%;
+  border:4px solid var(--emerald);transform:translate(-50%,-50%) scale(0);opacity:0;animation:rip .6s 7s both}
+@keyframes rip{0%{opacity:.8;transform:translate(-50%,-50%) scale(0)}100%{opacity:0;transform:translate(-50%,-50%) scale(6)}}
 
-/* payoff result */
-.result{width:760px;background:#fff;border:1px solid rgba(40,167,69,.3);border-radius:30px;
-  padding:50px 46px;box-shadow:0 50px 90px -40px rgba(40,167,69,.35);position:relative}
-.check{width:128px;height:128px;border-radius:50%;background:var(--green);margin:0 auto 28px;
+/* S3 payoff */
+.result{width:780px;background:#fff;border:1px solid rgba(16,185,129,.3);border-radius:32px;
+  padding:54px 50px;box-shadow:0 60px 110px -50px rgba(16,185,129,.4);position:relative}
+.pip{position:absolute;top:-30px;right:-20px;width:130px;height:130px;background:#fff;border:1px solid var(--line);
+  border-radius:22px;box-shadow:0 20px 50px -24px rgba(15,23,42,.4);display:flex;align-items:center;justify-content:center;
+  animation:pop .5s 10.4s both;transform:scale(0)}
+.pip .mini{position:relative;width:64px;height:50px;background:#fff;border:4px solid var(--navy);border-radius:6px 6px 14px 14px}
+.pip .mini:after{content:"";position:absolute;bottom:6px;left:6px;right:6px;height:12px;background:#A0541E;border-radius:3px}
+.pip .ms{position:absolute;bottom:50px;left:24px;width:5px;height:24px;background:linear-gradient(transparent,rgba(100,116,139,.5));
+  border-radius:5px;filter:blur(1px);animation:rise 2s infinite}
+.check{width:130px;height:130px;border-radius:50%;background:var(--emerald);margin:0 auto 30px;
   display:flex;align-items:center;justify-content:center;animation:pop .6s 9.3s both;transform:scale(0)}
-.check svg{width:64px;height:64px}
+.check svg{width:66px;height:66px}
 @keyframes pop{0%{transform:scale(0)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
-.fbrno{font-family:var(--fm);font-size:34px;color:var(--ink);font-weight:600;margin-top:8px}
-.fbrno small{display:block;font-size:22px;color:var(--mute);letter-spacing:.1em;margin-bottom:8px;font-weight:400}
-.qr{width:150px;height:150px;margin:30px auto 0;border-radius:14px;border:8px solid #fff;
-  background:repeating-conic-gradient(var(--ink) 0% 25%,transparent 0% 50%) 0 0/30px 30px;
-  box-shadow:0 0 0 2px rgba(15,20,16,.15);animation:pop .5s 9.7s both;transform:scale(0)}
+.fbrno{font-family:var(--fm);font-size:36px;color:var(--navy);font-weight:700;animation:scaleup .5s 9.7s both;transform:scale(.6);opacity:0}
+.fbrno small{display:block;font-size:21px;color:var(--mute);letter-spacing:.12em;margin-bottom:10px;font-weight:400}
+@keyframes scaleup{to{transform:scale(1);opacity:1}}
+.qr{width:156px;height:156px;margin:32px auto 0;border-radius:16px;border:8px solid #fff;
+  background:repeating-conic-gradient(var(--navy) 0% 25%,transparent 0% 50%) 0 0/31px 31px;
+  box-shadow:0 0 0 2px var(--line);animation:pop .5s 10.1s both;transform:scale(0)}
 
-/* fine scene */
-.warn{font-size:200px;animation:shake 1.4s 12.2s both;display:inline-block}
-@keyframes shake{0%,100%{transform:rotate(0)}20%{transform:rotate(-8deg)}40%{transform:rotate(8deg)}
-  60%{transform:rotate(-6deg)}80%{transform:rotate(6deg)}}
-.fine-amt{font-size:120px;font-weight:800;color:var(--red);letter-spacing:-.02em;line-height:1;margin:10px 0}
-.safe{display:inline-flex;align-items:center;gap:14px;margin-top:30px;font-size:38px;font-weight:700;
-  color:var(--green-d);background:rgba(40,167,69,.12);padding:16px 34px;border-radius:999px}
+/* S4 warning */
+.alert{background:var(--crimson);color:#fff;border-radius:26px;padding:44px 56px;
+  box-shadow:0 50px 100px -44px rgba(239,68,68,.6);animation:alertio 1.8s 12.2s both;opacity:0}
+.alert .ic{font-size:80px;margin-bottom:14px}
+.alert .t{font-size:78px;font-weight:800;letter-spacing:-.02em;line-height:1.05}
+@keyframes alertio{0%{opacity:0;transform:translateY(-40px) scale(.92)}12%{opacity:1;transform:none}
+  70%{opacity:1;transform:none}85%{opacity:0;transform:translateY(80px)}100%{opacity:0}}
+.banner{position:absolute;background:var(--emerald);color:#fff;border-radius:26px;padding:40px 56px;
+  font-size:52px;font-weight:800;letter-spacing:-.01em;box-shadow:0 50px 100px -44px rgba(16,185,129,.6);
+  animation:bannin 1.4s 13.8s both;opacity:0}
+@keyframes bannin{0%{opacity:0;transform:translateY(80px) scale(.94)}25%{opacity:1;transform:none}100%{opacity:1}}
 
-/* proof cards */
-.proof{display:flex;gap:22px;margin-top:10px}
-.pcard{background:#fff;border:1px solid rgba(40,167,69,.25);border-radius:22px;padding:30px 30px;
-  font-size:34px;font-weight:700;color:var(--ink);box-shadow:0 30px 60px -36px rgba(15,20,16,.3)}
-.pcard small{display:block;font-family:var(--fm);font-size:22px;color:var(--green-d);font-weight:500;margin-top:6px}
+/* S5 proof pills */
+.pills{display:flex;gap:24px}
+.pill{background:#fff;border:2px solid var(--navy);border-radius:999px;padding:28px 44px;
+  font-size:38px;font-weight:800;color:var(--navy);opacity:0;transform:translateY(24px)}
+.pill.on{border-color:var(--emerald);color:var(--emerald)}
+.p1{animation:pillin .5s 15.2s both}.p2{animation:pillin .5s 15.6s both}.p3{animation:pillin .5s 16s both}
+@keyframes pillin{to{opacity:1;transform:none}}
 
-/* CTA end card */
-.s6{color:#fff}
-.cta-logo{background:#fff;border-radius:22px;padding:22px 40px;margin-bottom:40px;
-  animation:pop .6s 17.3s both;transform:scale(0)}
-.cta-logo img{height:84px;display:block}
-.cta-h{font-size:84px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
-.cta-wa{display:inline-flex;align-items:center;gap:18px;margin-top:40px;background:#fff;color:var(--navy);
-  font-family:var(--fm);font-weight:700;font-size:42px;padding:22px 44px;border-radius:999px;
-  animation:wapulse 1.4s 18s infinite}
-.cta-wa .w{color:var(--green-d)}
-@keyframes wapulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-.tag{margin-top:34px;font-family:var(--fu);direction:rtl;font-size:46px;font-weight:700;color:#fff;opacity:.95}
-.site{margin-top:18px;font-family:var(--fm);font-size:30px;color:rgba(255,255,255,.85);letter-spacing:.04em}
+/* S6 CTA — white premium */
+.cta-logo{background:#fff;border:1px solid var(--line);border-radius:26px;padding:30px 50px;margin-bottom:46px;
+  box-shadow:0 30px 70px -36px rgba(15,23,42,.3);animation:pop .6s 17.4s both;transform:scale(0)}
+.cta-logo img{height:96px;display:block}
+.cta-h{font-size:80px;font-weight:800;letter-spacing:-.03em;color:var(--navy)}
+.cta-wa{display:inline-flex;align-items:center;gap:18px;margin-top:40px;background:var(--emerald);color:#fff;
+  font-family:var(--fm);font-weight:700;font-size:44px;padding:24px 48px;border-radius:999px;
+  box-shadow:0 30px 60px -28px rgba(16,185,129,.6);animation:wapulse 1.5s 18.2s infinite}
+.cta-wa svg{width:46px;height:46px}
+@keyframes wapulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+.tag{margin-top:40px;font-family:var(--fu);direction:rtl;font-size:50px;font-weight:700;color:var(--navy)}
+.site{margin-top:18px;font-family:var(--fm);font-size:30px;color:var(--mute);letter-spacing:.05em}
 </style></head>
 <body>
 <div class="stage" id="stage">
@@ -132,8 +148,10 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:linear-gradient(
     <div class="chai"><div class="steam"><span></span><span></span><span></span></div>
       <div class="cup"><div class="tea"></div></div></div>
     <div class="kick">einvoicepk · FBR Digital Invoicing</div>
-    <div class="big">Chai khatam hone se pehle…<br><span class="g">aap ki digital invoice ready?</span></div>
-    <div class="sub ur">چائے ختم ہونے سے پہلے، انوائس تیار؟</div>
+    <div style="position:relative;min-height:200px;display:flex;align-items:center;justify-content:center">
+      <div class="h h1a">Chai khatam<br>hone se pehle…</div>
+      <div class="h h1b">…aap ki <span class="g">digital invoice</span> ready?</div>
+    </div>
   </div>
 
   <!-- S2 ACTION -->
@@ -145,52 +163,47 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:linear-gradient(
       <div class="row r2"><span>Item · Qty</span><b>Rice 50kg × 10</b></div>
       <div class="row r3"><span>Total (incl. tax)</span><b>Rs 118,000</b></div>
       <div class="submit">Submit kare →</div>
+      <div class="ripple"></div>
+      <div class="cursor"><svg viewBox="0 0 24 24" fill="#0F172A"><path d="M4 2l16 9-7 2-2 7L4 2z"/></svg></div>
     </div>
-    <div class="sub">Customer · Item · Submit <b style="color:var(--green-d)">kare</b></div>
   </div>
 
   <!-- S3 PAYOFF -->
   <div class="scene s3">
     <div class="result">
+      <div class="pip"><div class="mini"></div><div class="ms"></div></div>
       <div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5 11-12" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="fbrno"><small>FBR INVOICE NUMBER</small>7000-2411-80105</div>
       <div class="qr"></div>
     </div>
-    <div class="big" style="margin-top:40px;font-size:60px">Invoice <span class="g">READY ✅</span></div>
+    <div class="h" style="margin-top:42px;font-size:62px">Invoice <span class="g">READY ✅</span></div>
     <div class="sub ur">اصلی FBR نمبر + QR · چائے ابھی گرم ہے ☕</div>
   </div>
 
-  <!-- S4 FINE -->
+  <!-- S4 WARNING -->
   <div class="scene s4">
-    <div class="warn">⚠️</div>
-    <div class="big" style="font-size:64px">Digital invoice na <span style="color:var(--red)">kare</span>…</div>
-    <div class="fine-amt">Rs 5 LAKH</div>
-    <div class="big" style="font-size:46px;color:var(--mute)">tak JARMANA</div>
-    <div class="safe">✅ magar aap 100% safe</div>
+    <div class="alert"><div class="ic">⚠️</div><div class="t">Rs 5 LAKH<br>tak JARMANA</div></div>
+    <div class="banner">✅ magar aap 100% safe</div>
   </div>
 
   <!-- S5 PROOF -->
   <div class="scene s5">
-    <div class="big" style="font-size:64px">Bilkul <span class="g">Muft</span> Start</div>
-    <div class="proof">
-      <div class="pcard">3 Minute<small>mein ready</small></div>
-      <div class="pcard">No Fee<small>koi card nahi</small></div>
-      <div class="pcard">FBR + PRAL<small>integrated</small></div>
+    <div class="pills">
+      <div class="pill p1">3 Min</div>
+      <div class="pill on p2">No Fee</div>
+      <div class="pill on p3">FBR + PRAL</div>
     </div>
   </div>
 
   <!-- S6 CTA -->
   <div class="scene s6">
     <div class="cta-logo"><img src="../assets/logo-provided.png" alt="einvoicepk"></div>
-    <div class="cta-h">Aaj hi try <span style="color:#BFF3CE">kare</span></div>
-    <div class="cta-wa">💬 WhatsApp <span class="w">0325-4180105</span></div>
+    <div class="cta-h">Aaj hi try kare</div>
+    <div class="cta-wa"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-2.6-.9-4.6-3.7-4.7-3.9-.2-.2-1.2-1.6-1.2-3s.7-2 1-2.3c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6-.3.3c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l1.8.9c.3.1.5.2.5.4.1.1.1.6-.1 1.1Z"/></svg> WhatsApp 0325-4180105</div>
     <div class="site">einvoicepk.com</div>
     <div class="tag">چائے جتنا آسان</div>
   </div>
 
 </div>
-<script>
-  // start animations only after fonts are ready, for clean sync
-  document.fonts.ready.then(()=>{ window.__ready = true; });
-</script>
+<script>document.fonts.ready.then(()=>{window.__ready=true});</script>
 </body></html>
