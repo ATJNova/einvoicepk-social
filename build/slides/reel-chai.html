@@ -1,0 +1,196 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../fonts.css">
+<style>
+:root{
+  --green:#28A745; --green-d:#1E8538; --navy:#1A3A7C; --red:#EF4444;
+  --amber:#F59E0B; --ink:#0F1410; --mute:#5b6660;
+  --f:'Geist',system-ui,sans-serif; --fu:'Noto Nastaliq Urdu',serif; --fm:'Geist Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:linear-gradient(160deg,#FFF7EC,#F2F6F1);font-family:var(--f)}
+.stage{position:relative;width:1080px;height:1920px;overflow:hidden;animation-play-state:paused}
+.stage.go *{animation-play-state:running !important}
+
+/* persistent brand header */
+.brandbar{position:absolute;top:54px;left:0;right:0;display:flex;justify-content:space-between;
+  align-items:center;padding:0 56px;z-index:50}
+.chip{background:#fff;border-radius:16px;padding:12px 20px;display:flex;align-items:center;
+  box-shadow:0 10px 30px -14px rgba(0,0,0,.35)}
+.chip.fbr img{height:64px;display:block}
+.chip.ev img{height:46px;display:block}
+
+/* scenes */
+.scene{position:absolute;inset:0;opacity:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;padding:140px 80px 120px;
+  animation:fade var(--d) var(--s) both}
+@keyframes fade{0%{opacity:0;transform:scale(1.02)}7%{opacity:1;transform:scale(1)}
+  92%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.99)}}
+
+.s1{--d:3s;--s:0s;z-index:10;background:linear-gradient(160deg,#FFF7EC,#F2F6F1)}
+.s2{--d:6s;--s:3s;z-index:11;background:linear-gradient(160deg,#F6F8F5,#FFFFFF)}
+.s3{--d:3s;--s:9s;z-index:12;background:linear-gradient(160deg,#E9F8EE,#FFFFFF)}
+.s4{--d:3s;--s:12s;z-index:13;background:linear-gradient(160deg,#FFE9E9,#FFF4F4)}
+.s5{--d:2s;--s:15s;z-index:14;background:linear-gradient(160deg,#E9F8EE,#FFFFFF)}
+.s6{z-index:15;background:linear-gradient(155deg,#16306B 0%,#1E8538 75%,#28A745 100%);
+  animation:fadehold 3s 17s both}
+@keyframes fadehold{0%{opacity:0;transform:scale(1.02)}15%{opacity:1;transform:scale(1)}100%{opacity:1;transform:scale(1)}}
+
+/* typography */
+.kick{font-family:var(--fm);font-size:26px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--green-d);margin-bottom:26px}
+.big{font-size:78px;line-height:1.12;font-weight:700;letter-spacing:-.02em;color:var(--ink)}
+.big .g{color:var(--green-d)}
+.ur{font-family:var(--fu);direction:rtl;line-height:1.7}
+.sub{font-size:40px;color:var(--mute);margin-top:26px;font-weight:500}
+
+/* chai cup + steam */
+.chai{position:relative;width:230px;height:200px;margin:0 auto 46px}
+.cup{position:absolute;bottom:0;left:35px;width:160px;height:120px;background:#fff;
+  border:6px solid var(--navy);border-radius:14px 14px 34px 34px}
+.cup:after{content:"";position:absolute;right:-46px;top:24px;width:46px;height:54px;
+  border:6px solid var(--navy);border-left:none;border-radius:0 30px 30px 0}
+.tea{position:absolute;bottom:14px;left:12px;right:12px;height:30px;background:#B5651D;border-radius:8px}
+.steam{position:absolute;left:0;right:0;top:-4px;height:120px}
+.steam span{position:absolute;bottom:0;width:10px;height:70px;background:linear-gradient(transparent,rgba(120,120,120,.5));
+  border-radius:10px;filter:blur(2px);animation:rise 2.2s ease-in-out infinite}
+.steam span:nth-child(1){left:74px;animation-delay:0s}
+.steam span:nth-child(2){left:108px;height:90px;animation-delay:.5s}
+.steam span:nth-child(3){left:142px;animation-delay:1s}
+@keyframes rise{0%{opacity:0;transform:translateY(20px) scaleY(.6)}40%{opacity:.8}
+  100%{opacity:0;transform:translateY(-46px) scaleY(1.2)}}
+
+/* invoice card */
+.card{width:760px;background:#fff;border:1px solid rgba(15,20,16,.10);border-radius:30px;
+  padding:42px 46px;box-shadow:0 50px 90px -40px rgba(15,20,16,.30)}
+.card .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
+.card .id{font-family:var(--fm);font-size:24px;color:#98a29b;letter-spacing:.05em}
+.badge{font-family:var(--fm);font-size:22px;padding:8px 18px;border-radius:999px;
+  background:rgba(40,167,69,.12);color:var(--green-d)}
+.row{display:flex;justify-content:space-between;padding:22px 0;border-bottom:1px dashed rgba(15,20,16,.12);
+  font-size:30px;opacity:0;transform:translateY(14px)}
+.row b{font-family:var(--fm);font-weight:600;color:var(--ink)}
+.row span{color:var(--mute)}
+.r1{animation:rowin .5s 3.5s both}.r2{animation:rowin .5s 4.1s both}.r3{animation:rowin .5s 4.7s both}
+@keyframes rowin{to{opacity:1;transform:none}}
+.submit{margin-top:34px;background:var(--green);color:#fff;font-family:var(--fm);font-weight:700;
+  font-size:30px;text-align:center;padding:24px;border-radius:18px;letter-spacing:.04em;
+  animation:press 1.6s 6.6s both}
+@keyframes press{0%,55%{transform:scale(1);filter:brightness(1)}62%{transform:scale(.95);filter:brightness(.9)}
+  70%{transform:scale(1)}100%{transform:scale(1)}}
+
+/* payoff result */
+.result{width:760px;background:#fff;border:1px solid rgba(40,167,69,.3);border-radius:30px;
+  padding:50px 46px;box-shadow:0 50px 90px -40px rgba(40,167,69,.35);position:relative}
+.check{width:128px;height:128px;border-radius:50%;background:var(--green);margin:0 auto 28px;
+  display:flex;align-items:center;justify-content:center;animation:pop .6s 9.3s both;transform:scale(0)}
+.check svg{width:64px;height:64px}
+@keyframes pop{0%{transform:scale(0)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
+.fbrno{font-family:var(--fm);font-size:34px;color:var(--ink);font-weight:600;margin-top:8px}
+.fbrno small{display:block;font-size:22px;color:var(--mute);letter-spacing:.1em;margin-bottom:8px;font-weight:400}
+.qr{width:150px;height:150px;margin:30px auto 0;border-radius:14px;border:8px solid #fff;
+  background:repeating-conic-gradient(var(--ink) 0% 25%,transparent 0% 50%) 0 0/30px 30px;
+  box-shadow:0 0 0 2px rgba(15,20,16,.15);animation:pop .5s 9.7s both;transform:scale(0)}
+
+/* fine scene */
+.warn{font-size:200px;animation:shake 1.4s 12.2s both;display:inline-block}
+@keyframes shake{0%,100%{transform:rotate(0)}20%{transform:rotate(-8deg)}40%{transform:rotate(8deg)}
+  60%{transform:rotate(-6deg)}80%{transform:rotate(6deg)}}
+.fine-amt{font-size:120px;font-weight:800;color:var(--red);letter-spacing:-.02em;line-height:1;margin:10px 0}
+.safe{display:inline-flex;align-items:center;gap:14px;margin-top:30px;font-size:38px;font-weight:700;
+  color:var(--green-d);background:rgba(40,167,69,.12);padding:16px 34px;border-radius:999px}
+
+/* proof cards */
+.proof{display:flex;gap:22px;margin-top:10px}
+.pcard{background:#fff;border:1px solid rgba(40,167,69,.25);border-radius:22px;padding:30px 30px;
+  font-size:34px;font-weight:700;color:var(--ink);box-shadow:0 30px 60px -36px rgba(15,20,16,.3)}
+.pcard small{display:block;font-family:var(--fm);font-size:22px;color:var(--green-d);font-weight:500;margin-top:6px}
+
+/* CTA end card */
+.s6{color:#fff}
+.cta-logo{background:#fff;border-radius:22px;padding:22px 40px;margin-bottom:40px;
+  animation:pop .6s 17.3s both;transform:scale(0)}
+.cta-logo img{height:84px;display:block}
+.cta-h{font-size:84px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.cta-wa{display:inline-flex;align-items:center;gap:18px;margin-top:40px;background:#fff;color:var(--navy);
+  font-family:var(--fm);font-weight:700;font-size:42px;padding:22px 44px;border-radius:999px;
+  animation:wapulse 1.4s 18s infinite}
+.cta-wa .w{color:var(--green-d)}
+@keyframes wapulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.tag{margin-top:34px;font-family:var(--fu);direction:rtl;font-size:46px;font-weight:700;color:#fff;opacity:.95}
+.site{margin-top:18px;font-family:var(--fm);font-size:30px;color:rgba(255,255,255,.85);letter-spacing:.04em}
+</style></head>
+<body>
+<div class="stage" id="stage">
+
+  <div class="brandbar">
+    <span class="chip fbr"><img src="../assets/fbr-logo.png" alt="FBR"></span>
+    <span class="chip ev"><img src="../assets/logo-trimmed.png" alt="einvoicepk"></span>
+  </div>
+
+  <!-- S1 HOOK -->
+  <div class="scene s1">
+    <div class="chai"><div class="steam"><span></span><span></span><span></span></div>
+      <div class="cup"><div class="tea"></div></div></div>
+    <div class="kick">einvoicepk · FBR Digital Invoicing</div>
+    <div class="big">Chai khatam hone se pehle…<br><span class="g">aap ki digital invoice ready?</span></div>
+    <div class="sub ur">چائے ختم ہونے سے پہلے، انوائس تیار؟</div>
+  </div>
+
+  <!-- S2 ACTION -->
+  <div class="scene s2">
+    <div class="kick">Invoice ban rahi hai…</div>
+    <div class="card">
+      <div class="top"><span class="id">NEW INVOICE</span><span class="badge">Draft</span></div>
+      <div class="row r1"><span>Customer</span><b>Karachi Mart</b></div>
+      <div class="row r2"><span>Item · Qty</span><b>Rice 50kg × 10</b></div>
+      <div class="row r3"><span>Total (incl. tax)</span><b>Rs 118,000</b></div>
+      <div class="submit">Submit kare →</div>
+    </div>
+    <div class="sub">Customer · Item · Submit <b style="color:var(--green-d)">kare</b></div>
+  </div>
+
+  <!-- S3 PAYOFF -->
+  <div class="scene s3">
+    <div class="result">
+      <div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5 11-12" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="fbrno"><small>FBR INVOICE NUMBER</small>7000-2411-80105</div>
+      <div class="qr"></div>
+    </div>
+    <div class="big" style="margin-top:40px;font-size:60px">Invoice <span class="g">READY ✅</span></div>
+    <div class="sub ur">اصلی FBR نمبر + QR · چائے ابھی گرم ہے ☕</div>
+  </div>
+
+  <!-- S4 FINE -->
+  <div class="scene s4">
+    <div class="warn">⚠️</div>
+    <div class="big" style="font-size:64px">Digital invoice na <span style="color:var(--red)">kare</span>…</div>
+    <div class="fine-amt">Rs 5 LAKH</div>
+    <div class="big" style="font-size:46px;color:var(--mute)">tak JARMANA</div>
+    <div class="safe">✅ magar aap 100% safe</div>
+  </div>
+
+  <!-- S5 PROOF -->
+  <div class="scene s5">
+    <div class="big" style="font-size:64px">Bilkul <span class="g">Muft</span> Start</div>
+    <div class="proof">
+      <div class="pcard">3 Minute<small>mein ready</small></div>
+      <div class="pcard">No Fee<small>koi card nahi</small></div>
+      <div class="pcard">FBR + PRAL<small>integrated</small></div>
+    </div>
+  </div>
+
+  <!-- S6 CTA -->
+  <div class="scene s6">
+    <div class="cta-logo"><img src="../assets/logo-provided.png" alt="einvoicepk"></div>
+    <div class="cta-h">Aaj hi try <span style="color:#BFF3CE">kare</span></div>
+    <div class="cta-wa">💬 WhatsApp <span class="w">0325-4180105</span></div>
+    <div class="site">einvoicepk.com</div>
+    <div class="tag">چائے جتنا آسان</div>
+  </div>
+
+</div>
+<script>
+  // start animations only after fonts are ready, for clean sync
+  document.fonts.ready.then(()=>{ window.__ready = true; });
+</script>
+</body></html>
