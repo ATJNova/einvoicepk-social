@@ -1,0 +1,138 @@
+<!doctype html><html lang="ur"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../fonts.css">
+<style>
+:root{
+  --white:#FFFFFF; --navy:#1A3A7C; --ink:#0F172A; --emerald:#28A745; --emerald-d:#1E8538;
+  --crimson:#EF4444; --mute:#64748B; --line:#E2E8F0;
+  --fu:'Noto Nastaliq Urdu',serif; --fm:'Geist Mono',monospace; --f:'Geist',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#fff;font-family:var(--f)}
+.stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#fff}
+
+.brandbar{position:absolute;top:60px;left:0;right:0;display:flex;justify-content:space-between;
+  align-items:center;padding:0 60px;z-index:60}
+.chip{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 22px;display:flex;align-items:center;
+  box-shadow:0 14px 34px -20px rgba(15,23,42,.30)}
+.chip.fbr img{height:60px;display:block}
+.chip.ev img{height:42px;display:block}
+
+.scene{position:absolute;inset:0;opacity:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;padding:220px 96px;background:#fff;
+  animation:fade var(--d) var(--s) both}
+@keyframes fade{0%{opacity:0;transform:translateY(18px)}10%{opacity:1;transform:none}88%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-14px)}}
+
+.s1{--d:3.5s;--s:0s;z-index:11}
+.s2{--d:3.5s;--s:3.5s;z-index:12}
+.s3{--d:3s;--s:7s;z-index:13}
+.s4{--d:5s;--s:10s;z-index:14}
+.s5{--d:4s;--s:15s;z-index:15}
+.s6{--d:3.5s;--s:19s;z-index:16}
+.s7{--d:3.5s;--s:22.5s;z-index:17}
+.s8{z-index:18;animation:fadehold 3s 26s both}
+@keyframes fadehold{0%{opacity:0;transform:translateY(18px)}14%{opacity:1;transform:none}100%{opacity:1}}
+
+.line{font-family:var(--fu);direction:rtl;font-weight:700;color:var(--navy);
+  font-size:66px;line-height:1.95;max-width:900px}
+.line.sm{font-size:52px}
+.g{color:var(--emerald-d)}
+.kick{font-family:var(--fm);font-size:24px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--emerald-d);margin-bottom:34px;font-weight:600}
+.accent{width:80px;height:5px;background:var(--emerald);border-radius:3px;margin:38px auto 0;
+  animation:grow .8s var(--gs,0s) both;transform-origin:center}
+@keyframes grow{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+
+/* S4 product card */
+.card{width:780px;background:#fff;border:1px solid rgba(40,167,69,.28);border-radius:32px;
+  padding:52px 50px;box-shadow:0 60px 110px -50px rgba(40,167,69,.35);margin-bottom:48px}
+.check{width:120px;height:120px;border-radius:50%;background:var(--emerald);margin:0 auto 28px;
+  display:flex;align-items:center;justify-content:center;transform:scale(0);animation:pop .6s 11.4s both}
+.check svg{width:60px;height:60px}
+@keyframes pop{0%{transform:scale(0)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
+.fbrno{font-family:var(--fm);font-size:34px;color:var(--navy);font-weight:700;opacity:0;transform:scale(.7);animation:su .5s 11.8s both}
+.fbrno small{display:block;font-size:20px;color:var(--mute);letter-spacing:.12em;margin-bottom:10px;font-weight:400}
+@keyframes su{to{opacity:1;transform:scale(1)}}
+.qr{width:150px;height:150px;margin:30px auto 0;border-radius:16px;border:8px solid #fff;
+  background:repeating-conic-gradient(var(--navy) 0% 25%,transparent 0% 50%) 0 0/30px 30px;
+  box-shadow:0 0 0 2px var(--line);transform:scale(0);animation:pop .5s 12.2s both}
+
+/* S5 penalty -> shield */
+.flash{font-family:var(--f);font-weight:800;font-size:120px;color:var(--crimson);letter-spacing:-.02em;
+  opacity:0;animation:flashio 2s 15.4s both}
+@keyframes flashio{0%{opacity:0;transform:scale(.9)}12%{opacity:1;transform:scale(1)}45%{opacity:1}60%{opacity:0;transform:scale(.96)}100%{opacity:0}}
+.shield{display:flex;flex-direction:column;align-items:center;gap:26px;opacity:0;animation:shin 1.4s 17s both}
+@keyframes shin{0%{opacity:0;transform:translateY(30px) scale(.94)}30%{opacity:1;transform:none}100%{opacity:1}}
+.shield .ic{width:130px;height:130px;border-radius:30px;background:rgba(40,167,69,.12);
+  display:flex;align-items:center;justify-content:center}
+.shield .ic svg{width:72px;height:72px}
+
+/* S8 end card */
+.s8{background:linear-gradient(160deg,#FFFFFF, #F4F8F5)}
+.cta-logo{background:#fff;border:1px solid var(--line);border-radius:26px;padding:30px 52px;margin-bottom:46px;
+  box-shadow:0 30px 70px -36px rgba(15,23,42,.3);transform:scale(0);animation:pop .6s 26.4s both}
+.cta-logo img{height:92px;display:block}
+.cta-tag{font-family:var(--fu);direction:rtl;font-size:62px;font-weight:700;color:var(--navy);line-height:1.7}
+.cta-tag .g{color:var(--emerald-d)}
+.cta-wa{display:inline-flex;align-items:center;gap:18px;margin-top:42px;background:var(--emerald);color:#fff;
+  font-family:var(--fm);font-weight:700;font-size:40px;padding:24px 46px;border-radius:999px;
+  box-shadow:0 30px 60px -28px rgba(40,167,69,.6)}
+.cta-wa svg{width:44px;height:44px}
+.site{margin-top:20px;font-family:var(--fm);font-size:30px;color:var(--mute);letter-spacing:.05em}
+</style></head>
+<body>
+<div class="stage" id="stage">
+
+  <div class="brandbar">
+    <span class="chip fbr"><img src="../assets/fbr-logo.png" alt="FBR"></span>
+    <span class="chip ev"><img src="../assets/logo-trimmed.png" alt="einvoicepk"></span>
+  </div>
+
+  <div class="scene s1">
+    <div class="kick">einvoicepk · FBR Digital Invoicing</div>
+    <div class="line">ہر کامیاب کاروبار کی بنیاد<br>ایک ہی چیز پر ہے — <span class="g">اعتماد</span></div>
+    <div class="accent" style="--gs:0.6s"></div>
+  </div>
+
+  <div class="scene s2">
+    <div class="line">اور آج، ایف بی آر کے ساتھ<br>آپ کے ہر معاملے میں<br>وہی <span class="g">اعتماد</span> سب سے اہم ہے</div>
+  </div>
+
+  <div class="scene s3">
+    <div class="line">einvoicepk اسی اعتماد کو<br><span class="g">آسان</span> بنا دیتا ہے</div>
+  </div>
+
+  <div class="scene s4">
+    <div class="card">
+      <div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5 11-12" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="fbrno"><small>FBR INVOICE NUMBER</small>7000-2411-80105</div>
+      <div class="qr"></div>
+    </div>
+    <div class="line sm">ہر انوائس — مکمل <span class="g">تصدیق شدہ</span><br>اصل نمبر، QR کوڈ، پوری شفافیت</div>
+  </div>
+
+  <div class="scene s5">
+    <div class="flash">Rs ۵ لاکھ</div>
+    <div class="shield">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z" stroke="#1E8538" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#1E8538" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="line sm">ایک غلطی، ۵ لاکھ جرمانہ —<br>مگر یہی اعتماد آپ کی <span class="g">ڈھال</span> ہے</div>
+    </div>
+  </div>
+
+  <div class="scene s6">
+    <div class="line">نہ الجھن، نہ خوف،<br>نہ غلطی کا اندیشہ۔<br>بس <span class="g">سکون</span></div>
+  </div>
+
+  <div class="scene s7">
+    <div class="line">کیونکہ آپ کا وقت حساب کتاب میں نہیں —<br>اپنا <span class="g">کاروبار بڑھانے</span> میں لگنا چاہیے</div>
+  </div>
+
+  <div class="scene s8">
+    <div class="cta-logo"><img src="../assets/logo-provided.png" alt="einvoicepk"></div>
+    <div class="cta-tag">einvoicepk<br><span class="g">اعتماد کے ساتھ</span>، ایف بی آر کے ساتھ</div>
+    <div class="cta-wa"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-2.6-.9-4.6-3.7-4.7-3.9-.2-.2-1.2-1.6-1.2-3s.7-2 1-2.3c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6-.3.3c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l1.8.9c.3.1.5.2.5.4.1.1.1.6-.1 1.1Z"/></svg> WhatsApp 0325-4180105</div>
+    <div class="site">einvoicepk.com</div>
+  </div>
+
+</div>
+<script>document.fonts.ready.then(()=>{window.__ready=true});</script>
+</body></html>
