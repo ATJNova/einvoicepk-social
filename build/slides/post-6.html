@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../fonts.css"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+.slide{position:relative;width:1080px;height:1350px;background:#fff;overflow:hidden;
+  font-family:'Geist',sans-serif;color:#0F172A;padding:74px 76px 64px;display:flex;flex-direction:column}
+.blob{position:absolute;width:720px;height:720px;border-radius:50%;background:#F59E0B;filter:blur(10px);opacity:.10;right:-150px;top:-160px}
+.ph{display:flex;align-items:center;justify-content:space-between;z-index:2}
+.lc{background:#fff;border:1px solid #E2E8F0;border-radius:16px;padding:11px 18px;display:flex}.lc img{height:42px;display:block}
+.fb{display:inline-flex;align-items:center;gap:8px;font-family:'Geist Mono',monospace;font-size:14px;color:#1E8538;
+  background:rgba(40,167,69,.10);border:1px solid #cdead5;padding:8px 14px;border-radius:999px}
+.fb .d{width:8px;height:8px;border-radius:50%;background:#28A745}
+.body{flex:1;display:flex;flex-direction:column;justify-content:center;gap:26px;z-index:2}
+.eye{font-family:'Geist Mono',monospace;font-size:22px;letter-spacing:.22em;color:#B45309;font-weight:600}
+.h{font-size:72px;line-height:1.08;font-weight:800;letter-spacing:-.02em}
+.h .o{color:#B45309}
+/* invoice mock */
+.inv{background:#fff;border:1px solid #E2E8F0;border-radius:22px;padding:34px 36px;box-shadow:0 40px 80px -40px rgba(15,23,42,.25);position:relative}
+.inv .it{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.inv .it b{font-family:'Geist Mono',monospace;font-size:22px;color:#1A3A7C}
+.inv .tag{font-family:'Geist Mono',monospace;font-size:16px;color:#94A3B8}
+.r{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px dashed #E2E8F0;font-size:25px}
+.r span{color:#64748B}.r b{font-family:'Geist Mono',monospace;color:#0F172A;font-weight:500}
+.tot{display:flex;justify-content:space-between;padding-top:18px;font-size:28px;font-weight:700;color:#0F172A}
+.mag{position:absolute;right:-18px;bottom:-22px;font-size:90px}
+.sub{font-size:30px;line-height:1.5;color:#475569}.sub b{color:#0F172A}
+.foot{display:flex;align-items:center;justify-content:space-between;padding-top:24px;border-top:1px solid #E2E8F0;
+  font-family:'Geist Mono',monospace;font-size:22px;color:#64748B;z-index:2}.foot .wa{color:#1E8538;font-weight:600}
+</style></head>
+<body><div class="slide">
+<div class="blob"></div>
+<div class="ph"><span class="lc"><img src="../assets/logo-trimmed.png" alt="einvoicepk"></span>
+<span class="fb"><span class="d"></span> FBR INTEGRATED</span></div>
+<div class="body">
+  <div class="eye">DHOONDEIN 🔍</div>
+  <h1 class="h">Is invoice mein <span class="o">ghalti</span> kya hai?</h1>
+  <div class="inv">
+    <div class="it"><b>INVOICE · INV-0042</b><span class="tag">24 Jun 2026</span></div>
+    <div class="r"><span>Seller</span><b>ATJ Traders (Pvt) Ltd</b></div>
+    <div class="r"><span>Buyer · NTN</span><b>Karachi Mart · 7654321-0</b></div>
+    <div class="r"><span>Item · Sales tax 18%</span><b>Rs 100,000 + 18,000</b></div>
+    <div class="tot"><span>Total</span><span>Rs 118,000</span></div>
+    <div class="mag">🔍</div>
+  </div>
+  <p class="sub">Hint: ek cheez <b>missing</b> hai jo isay FBR-valid banati hai. 👇 Comment mein batayein!</p>
+</div>
+<div class="foot"><span>einvoicepk.com</span><span class="wa">💬 0325-4180105</span></div>
+</div></body></html>
