@@ -1,45 +1,39 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
-<link rel="stylesheet" href="../fonts.css"><style>
-*{margin:0;padding:0;box-sizing:border-box}
-.slide{position:relative;width:1080px;height:1350px;background:#fff;overflow:hidden;
-  font-family:'Geist',sans-serif;color:#0F172A;padding:80px 80px 70px;display:flex;flex-direction:column}
-.bgblob{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(10px);opacity:.10;right:-160px;top:-160px}
-.navy .bgblob{background:#1A3A7C}.green .bgblob{background:#28A745}.red .bgblob{background:#EF4444}
-.phead{display:flex;align-items:center;justify-content:space-between;z-index:2}
-.logoc{background:#fff;border:1px solid #E2E8F0;border-radius:16px;padding:12px 20px;display:flex}
-.logoc img{height:46px;display:block}
-.fbrb{display:inline-flex;align-items:center;gap:9px;font-family:'Geist Mono',monospace;font-size:15px;
-  letter-spacing:.04em;color:#1E8538;background:rgba(40,167,69,.10);border:1px solid #cdead5;padding:9px 16px;border-radius:999px}
-.fbrb .dot{width:8px;height:8px;border-radius:50%;background:#28A745}
-.pbody{flex:1;display:flex;flex-direction:column;justify-content:center;gap:34px;z-index:2}
-.eyebrow{font-family:'Geist Mono',monospace;font-size:24px;letter-spacing:.24em;color:#1E8538;font-weight:600}
-.navy .eyebrow{color:#1A3A7C}.red .eyebrow{color:#EF4444}
-.ph{font-size:84px;line-height:1.08;font-weight:800;letter-spacing:-.02em;color:#0F172A}
-.ph .g{color:#1E8538}.ph .r{color:#EF4444}
-.pt{font-size:33px;line-height:1.5;color:#475569;max-width:880px}
-.pt b{color:#0F172A;font-weight:700}
-.plist{display:flex;flex-direction:column;gap:20px}
-.pli{display:flex;align-items:center;gap:20px;font-size:32px;font-weight:600;color:#0F172A}
-.pli .c{width:46px;height:46px;border-radius:50%;flex:none;background:rgba(40,167,69,.12);display:flex;align-items:center;justify-content:center}
-.pli .c svg{width:24px;height:24px}
-.pbox{background:#F6F8F5;border:1px solid #E2E8F0;border-left:6px solid #28A745;border-radius:14px;
-  padding:26px 30px;font-size:30px;font-weight:700;color:#1A3A7C}
-.red .pbox{border-left-color:#EF4444;color:#B91C1C;background:#FEF2F2;border-color:#fecaca}
-.pfoot{display:flex;align-items:center;justify-content:space-between;padding-top:28px;border-top:1px solid #E2E8F0;
-  font-family:'Geist Mono',monospace;font-size:24px;color:#64748B;z-index:2}
-.pfoot .wa{color:#1E8538;font-weight:600}
-</style></head>
-<body><div class="slide green">
-<div class="bgblob"></div>
-<div class="phead">
-  <span class="logoc"><img src="../assets/logo-trimmed.png" alt="einvoicepk"></span>
-  <span class="fbrb"><span class="dot"></span> FBR INTEGRATED</span></div>
-<div class="pbody">
-  <div class="eyebrow">QUICK GUIDE</div>
-  <h1 class="ph">What makes an invoice<br><span class="g">FBR-valid?</span></h1>
-  <div class="plist"><div class="pli"><span class="c"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9l4 4 7-8" stroke="#1E8538" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Valid FBR Invoice Number (IRN)</div><div class="pli"><span class="c"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9l4 4 7-8" stroke="#1E8538" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>QR code on every invoice</div><div class="pli"><span class="c"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9l4 4 7-8" stroke="#1E8538" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>FBR digital invoicing logo</div><div class="pli"><span class="c"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9l4 4 7-8" stroke="#1E8538" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Submitted to FBR via PRAL</div></div>
-  <p class="pt">einvoicepk adds all of this — <b>automatically</b>.</p>
-  
+<link rel="stylesheet" href="../fonts.css">
+<link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide theme-light">
+  <div class="bg-aurora"></div><div class="bg-grid"></div><div class="bg-vignette"></div>
+  <div class="frame">
+    <div class="head">
+      <div class="brand"><span class="logo-chip"><img src="../assets/logo-trimmed.png" alt="einvoicepk.com"></span></div>
+      <div class="fbr-chip"><span class="dot"></span> FBR INTEGRATED</div>
+    </div>
+    <div class="grow" style="display:flex;flex-direction:column;justify-content:center;gap:38px;">
+      <div class="eyebrow">Quick Guide</div>
+      <h1 class="display h-step">FBR-valid invoice<br>mein kya hona<br><span class="grad">zaroori hai?</span></h1>
+      <div class="rail">
+        <div class="rail-item on">
+          <div class="rail-node">1</div>
+          <div class="rail-txt"><h3>Valid FBR Invoice Number (IRN)</h3></div>
+        </div>
+        <div class="rail-item on">
+          <div class="rail-node">2</div>
+          <div class="rail-txt"><h3>QR Code har invoice par</h3></div>
+        </div>
+        <div class="rail-item on">
+          <div class="rail-node">3</div>
+          <div class="rail-txt"><h3>FBR Digital Invoicing logo</h3></div>
+        </div>
+        <div class="rail-item on">
+          <div class="rail-node">4</div>
+          <div class="rail-txt"><h3>PRAL se FBR submit</h3></div>
+        </div>
+      </div>
+      <p class="lead">einvoicepk yeh sab <strong>automatically</strong> karta hai — har invoice par.</p>
+    </div>
+    <div class="foot"><span class="site">einvoicepk.com</span><span style="color:var(--green-bright);font-weight:600;">💬 0325-4180105</span></div>
+  </div>
 </div>
-<div class="pfoot"><span>einvoicepk.com</span><span class="wa">💬 0325-4180105</span></div>
-</div></body></html>
+</body></html>
