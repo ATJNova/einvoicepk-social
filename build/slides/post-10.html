@@ -1,0 +1,76 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../fonts.css"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+.slide{position:relative;width:1080px;height:1350px;background:#0A1428;overflow:hidden;
+  font-family:'Geist',sans-serif;color:#EAF0FA;padding:74px 76px 64px;display:flex;flex-direction:column}
+.blob{position:absolute;width:600px;height:600px;border-radius:50%;background:#28A745;filter:blur(120px);opacity:.12;right:-100px;top:-100px}
+.ph{display:flex;align-items:center;justify-content:space-between;z-index:2}
+.lc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:11px 18px;display:flex}.lc img{height:42px;display:block}
+.fb{display:inline-flex;align-items:center;gap:8px;font-family:'Geist Mono',monospace;font-size:14px;color:#3BD968;
+  background:rgba(59,217,104,.10);border:1px solid rgba(59,217,104,.25);padding:8px 14px;border-radius:999px}
+.fb .d{width:8px;height:8px;border-radius:50%;background:#3BD968}
+.body{flex:1;display:flex;flex-direction:column;justify-content:center;gap:28px;z-index:2}
+.eye{font-family:'Geist Mono',monospace;font-size:21px;letter-spacing:.2em;color:#3BD968;font-weight:600}
+.h{font-size:72px;line-height:1.08;font-weight:800;letter-spacing:-.02em}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{border-radius:20px;padding:30px 28px;display:flex;flex-direction:column;gap:12px}
+.card.old{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2)}
+.card.new{background:rgba(59,217,104,.08);border:1px solid rgba(59,217,104,.2)}
+.card-label{font-family:'Geist Mono',monospace;font-size:16px;letter-spacing:.1em;font-weight:600}
+.card.old .card-label{color:#F87171}
+.card.new .card-label{color:#3BD968}
+.card-time{font-size:64px;font-weight:900;letter-spacing:-.03em;line-height:1}
+.card.old .card-time{color:#EF4444}
+.card.new .card-time{color:#3BD968}
+.card-desc{font-size:22px;color:#94A3B8;line-height:1.4}
+.card.new .card-desc{color:#86EFAC}
+.steps{display:flex;flex-direction:column;gap:10px}
+.step{display:flex;align-items:center;gap:14px;font-size:26px;color:#F87171}
+.step .n{font-family:'Geist Mono',monospace;font-size:18px;color:#64748B;width:24px;flex:none}
+.steps-new{display:flex;flex-direction:column;gap:10px}
+.step-new{display:flex;align-items:center;gap:14px;font-size:26px;color:#3BD968;font-weight:600}
+.step-new .n{font-family:'Geist Mono',monospace;font-size:18px;color:#64748B;width:24px;flex:none}
+.win{background:rgba(59,217,104,.1);border:1px solid rgba(59,217,104,.2);border-radius:14px;
+  padding:22px 26px;text-align:center;font-size:30px;font-weight:700;color:#3BD968;line-height:1.4}
+.cta{font-size:24px;color:#94A3B8;text-align:center}.cta b{color:#EAF0FA}
+.foot{display:flex;align-items:center;justify-content:space-between;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);
+  font-family:'Geist Mono',monospace;font-size:22px;color:#64748B;z-index:2}.foot .wa{color:#3BD968;font-weight:600}
+</style></head>
+<body><div class="slide">
+<div class="blob"></div>
+<div class="ph">
+  <span class="lc"><img src="../assets/logo-trimmed.png" alt="einvoicepk"></span>
+  <span class="fb"><span class="d"></span> FBR INTEGRATED</span>
+</div>
+<div class="body">
+  <div class="eye">PURANA VS NAYA ⏱️</div>
+  <h1 class="h">FBR invoice banane<br>mein kitna waqt?</h1>
+  <div class="row">
+    <div class="card old">
+      <div class="card-label">❌ PURANA TARIKA</div>
+      <div class="card-time">45<span style="font-size:36px">min</span></div>
+      <div class="steps">
+        <div class="step"><span class="n">1.</span>Excel open karo</div>
+        <div class="step"><span class="n">2.</span>Tax manually calculate</div>
+        <div class="step"><span class="n">3.</span>FBR portal pe upload</div>
+        <div class="step"><span class="n">4.</span>IRN dhundho, QR add karo</div>
+        <div class="step"><span class="n">5.</span>Errors check karo 😩</div>
+      </div>
+    </div>
+    <div class="card new">
+      <div class="card-label">✅ EINVOICEPK</div>
+      <div class="card-time">3<span style="font-size:36px">min</span></div>
+      <div class="steps-new">
+        <div class="step-new"><span class="n">1.</span>Items add karo</div>
+        <div class="step-new"><span class="n">2.</span>Submit karein</div>
+        <div class="step-new" style="color:#86EFAC;font-weight:400">IRN + QR automatic ✨</div>
+        <div class="step-new" style="color:#86EFAC;font-weight:400">FBR-valid instantly ✨</div>
+        <div class="step-new" style="color:#86EFAC;font-weight:400">Zero errors ✨</div>
+      </div>
+    </div>
+  </div>
+  <div class="win">42 minutes bachaye — har ek invoice par. 🚀</div>
+  <p class="cta">👇 Share karein apne accountant ko — <b>unka bhi waqt bachega</b></p>
+</div>
+<div class="foot"><span>einvoicepk.com</span><span class="wa">💬 0325-4180105</span></div>
+</div></body></html>
