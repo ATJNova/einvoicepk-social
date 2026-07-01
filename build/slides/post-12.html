@@ -1,43 +1,49 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
-<link rel="stylesheet" href="../fonts.css"><style>
-*{margin:0;padding:0;box-sizing:border-box}
-.slide{width:1080px;height:1350px;background:#28A745;
-  font-family:'Geist',sans-serif;display:flex;flex-direction:column;padding:74px 76px 64px}
-.ph{display:flex;align-items:center;justify-content:space-between}
-.lc{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:16px;padding:11px 18px;display:flex}.lc img{height:42px;display:block}
-.fb{display:inline-flex;align-items:center;gap:8px;font-family:'Geist Mono',monospace;font-size:14px;color:#fff;
-  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);padding:8px 14px;border-radius:999px;font-weight:600}
-.fb .d{width:8px;height:8px;border-radius:50%;background:#fff}
-.body{flex:1;display:flex;flex-direction:column;justify-content:center;gap:32px}
-.q{font-size:76px;font-weight:900;line-height:1.05;letter-spacing:-.03em;color:#ffffff}
-.divider{display:flex;align-items:center;gap:20px}
-.divider span{font-family:'Geist Mono',monospace;font-size:22px;color:rgba(255,255,255,.6);letter-spacing:.1em}
-.divider hr{flex:1;border:none;border-top:2px solid rgba(255,255,255,.3)}
-.answers{display:flex;flex-direction:column;gap:16px}
-.ans{background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.3);border-radius:18px;
-  padding:24px 30px;font-size:34px;font-weight:700;color:#fff;display:flex;align-items:center;gap:16px}
-.ans .tick{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.2);flex:none;display:flex;align-items:center;justify-content:center;font-size:24px}
-.ans.win{background:#1A3A7C;border-color:#1A3A7C}
-.cta{font-size:30px;font-weight:700;color:#fff;line-height:1.4}
-.foot{display:flex;align-items:center;justify-content:space-between;padding-top:28px;border-top:2px solid rgba(255,255,255,.2);
-  font-family:'Geist Mono',monospace;font-size:22px;color:rgba(255,255,255,.7)}
-.foot .wa{color:#fff;font-weight:700}
-</style></head>
-<body><div class="slide">
-<div class="ph">
-  <span class="lc"><img src="../assets/logo-trimmed.png" alt="einvoicepk"></span>
-  <span class="fb"><span class="d"></span> FBR INTEGRATED</span>
-</div>
-<div class="body">
-  <h1 class="q">Aapka invoice<br>FBR-valid hai?</h1>
-  <div class="divider"><hr><span>CHECK KAREIN</span><hr></div>
-  <div class="answers">
-    <div class="ans"><span class="tick">✅</span> IRN number har invoice par</div>
-    <div class="ans"><span class="tick">✅</span> FBR QR code maujood hai</div>
-    <div class="ans"><span class="tick">✅</span> PRAL se submit hua</div>
-    <div class="ans win"><span class="tick">🚀</span> Sab hai? Aap safe hain!</div>
+<link rel="stylesheet" href="../fonts.css">
+<link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide theme-light">
+  <div class="bg-aurora"></div>
+  <div class="bg-grid"></div>
+  <div class="bg-vignette"></div>
+  <div class="frame">
+    <div class="head">
+      <div class="brand"><span class="logo-chip"><img src="../assets/logo-trimmed.png" alt="einvoicepk.com"></span></div>
+      <div class="fbr-chip"><span class="dot"></span> FBR INTEGRATED</div>
+    </div>
+    <div class="grow" style="display:flex;flex-direction:column;justify-content:center;gap:38px;">
+      <div class="eyebrow">Check Karein</div>
+      <h1 class="display h-cover">Aapka invoice<br><span class="grad">FBR-valid</span> hai?</h1>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div style="display:flex;align-items:center;gap:20px;background:var(--card);border:1px solid var(--card-line);border-radius:18px;padding:22px 26px;">
+          <span style="font-size:30px;">✅</span>
+          <div>
+            <div style="font-size:27px;font-weight:700;color:var(--text);">Valid IRN number</div>
+            <div style="font-size:20px;color:var(--mute);">Har invoice par FBR Invoice Number hona zaroori</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:20px;background:var(--card);border:1px solid var(--card-line);border-radius:18px;padding:22px 26px;">
+          <span style="font-size:30px;">✅</span>
+          <div>
+            <div style="font-size:27px;font-weight:700;color:var(--text);">FBR QR code</div>
+            <div style="font-size:20px;color:var(--mute);">Scan-able QR har bill par</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:20px;background:var(--card);border:1px solid var(--card-line);border-radius:18px;padding:22px 26px;">
+          <span style="font-size:30px;">✅</span>
+          <div>
+            <div style="font-size:27px;font-weight:700;color:var(--text);">PRAL submitted</div>
+            <div style="font-size:20px;color:var(--mute);">Direct FBR portal pe record</div>
+          </div>
+        </div>
+      </div>
+      <p class="lead">Nahi hai? <strong>einvoicepk</strong> yeh sab automatically karta hai — har ek invoice par.</p>
+    </div>
+    <div class="foot">
+      <span class="site">einvoicepk.com</span>
+      <span style="color:var(--green-bright);font-weight:600;">💬 0325-4180105</span>
+    </div>
   </div>
-  <p class="cta">Nahi hai? einvoicepk par signup karein —<br>3 minute mein sab set.</p>
 </div>
-<div class="foot"><span>einvoicepk.com</span><span class="wa">💬 0325-4180105</span></div>
-</div></body></html>
+</body></html>

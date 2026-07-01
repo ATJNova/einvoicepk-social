@@ -1,87 +1,62 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
-<link rel="stylesheet" href="../fonts.css"><style>
-*{margin:0;padding:0;box-sizing:border-box}
-.slide{width:1080px;height:1350px;background:#ffffff;
-  font-family:'Geist',sans-serif;color:#0F172A;display:flex;flex-direction:column;padding:56px 64px 52px}
-
-/* header */
-.ph{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px}
-.lc{background:#fff;border:1px solid #E2E8F0;border-radius:14px;padding:10px 16px;display:flex}
-.lc img{height:40px;display:block}
-.fb{display:inline-flex;align-items:center;gap:8px;font-family:'Geist Mono',monospace;font-size:13px;color:#1E8538;
-  background:rgba(40,167,69,.10);border:1px solid #cdead5;padding:7px 13px;border-radius:999px;font-weight:600}
-.fb .d{width:7px;height:7px;border-radius:50%;background:#28A745}
-
-/* hero strip */
-.hero{background:#1A3A7C;border-radius:22px;padding:32px 36px;margin-bottom:28px;position:relative;overflow:hidden}
-.hero::after{content:'';position:absolute;right:-40px;top:-40px;width:220px;height:220px;
-  border-radius:50%;background:#28A745;opacity:.18}
-.hero-tag{font-family:'Geist Mono',monospace;font-size:13px;letter-spacing:.15em;color:#3BD968;font-weight:600;margin-bottom:10px}
-.hero h1{font-size:48px;font-weight:900;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:6px}
-.hero p{font-size:22px;color:rgba(255,255,255,.7);line-height:1.4}
-
-/* features */
-.sec-title{font-family:'Geist Mono',monospace;font-size:13px;letter-spacing:.18em;color:#94A3B8;font-weight:600;margin-bottom:14px}
-.feats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
-.feat{background:#F8FAFC;border:1px solid #E2E8F0;border-radius:16px;padding:20px 22px;display:flex;align-items:flex-start;gap:14px}
-.feat .ic{font-size:28px;line-height:1;flex:none;margin-top:2px}
-.feat .tx strong{display:block;font-size:22px;font-weight:700;color:#0F172A;margin-bottom:2px}
-.feat .tx span{font-size:17px;color:#64748B}
-
-/* pricing */
-.price{background:#F1F8F3;border:1.5px solid #cdead5;border-radius:18px;padding:22px 28px;margin-bottom:28px;
-  display:flex;align-items:center;justify-content:space-between}
-.price-left strong{display:block;font-size:32px;font-weight:800;color:#1A3A7C}
-.price-left span{font-size:18px;color:#64748B}
-.price-badge{background:#28A745;color:#fff;font-size:18px;font-weight:700;padding:10px 20px;border-radius:999px;white-space:nowrap}
-
-/* cta row */
-.ctas{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px}
-.cta-btn{border-radius:16px;padding:22px;text-align:center;font-size:22px;font-weight:700}
-.cta-btn.wa{background:#25D366;color:#fff}
-.cta-btn.site{background:#1A3A7C;color:#fff}
-.cta-btn .small{display:block;font-size:15px;font-weight:400;opacity:.85;margin-top:3px}
-
-/* footer */
-.foot{display:flex;align-items:center;justify-content:space-between;padding-top:22px;border-top:1px solid #E2E8F0;
-  font-family:'Geist Mono',monospace;font-size:19px;color:#64748B}
-.foot .wa{color:#1E8538;font-weight:600}
-</style></head>
-<body><div class="slide">
-
-<div class="ph">
-  <span class="lc"><img src="../assets/logo-trimmed.png" alt="einvoicepk"></span>
-  <span class="fb"><span class="d"></span> FBR INTEGRATED</span>
-</div>
-
-<div class="hero">
-  <div class="hero-tag">PAKISTAN'S FBR-COMPLIANT INVOICING PLATFORM</div>
-  <h1>Sab kuch ek jagah —<br>FBR invoice, IRN, QR.</h1>
-  <p>Sales-tax registered businesses ke liye. SRO 709(I)/2025 compliant.</p>
-</div>
-
-<div class="sec-title">AUR KYA MILEGA:</div>
-<div class="feats">
-  <div class="feat"><span class="ic">⚡</span><div class="tx"><strong>Instant IRN + QR</strong><span>Har invoice par automatic</span></div></div>
-  <div class="feat"><span class="ic">📊</span><div class="tx"><strong>Bulk Excel Upload</strong><span>Hazaron invoices ek saath</span></div></div>
-  <div class="feat"><span class="ic">📱</span><div class="tx"><strong>Mobile App</strong><span>Kahin se bhi invoice karein</span></div></div>
-  <div class="feat"><span class="ic">🤝</span><div class="tx"><strong>24/7 Support</strong><span>Chatbot + team always ready</span></div></div>
-  <div class="feat"><span class="ic">👥</span><div class="tx"><strong>Multi-user Access</strong><span>Poori team ek platform par</span></div></div>
-  <div class="feat"><span class="ic">🔗</span><div class="tx"><strong>PRAL Integrated</strong><span>Direct FBR submission</span></div></div>
-</div>
-
-<div class="price">
-  <div class="price-left">
-    <strong>Free Trial — 14 din</strong>
-    <span>No credit card · No setup fee · Start in 10 steps</span>
+<link rel="stylesheet" href="../fonts.css">
+<link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide theme-light">
+  <div class="bg-aurora"></div>
+  <div class="bg-grid"></div>
+  <div class="bg-vignette"></div>
+  <div class="frame">
+    <div class="head">
+      <div class="brand"><span class="logo-chip"><img src="../assets/logo-trimmed.png" alt="einvoicepk.com"></span></div>
+      <div class="fbr-chip"><span class="dot"></span> FBR INTEGRATED</div>
+    </div>
+    <div class="grow" style="display:flex;flex-direction:column;justify-content:center;gap:32px;">
+      <div class="eyebrow">Sab Kuch Ek Jagah</div>
+      <h1 class="display h-step"><span class="grad">einvoicepk</span> —<br>aapka FBR<br>invoicing platform.</h1>
+      <div class="cards">
+        <div class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+          </div>
+          <h3>IRN + QR Code</h3>
+          <p>Har invoice par instant. Automatic. FBR-valid.</p>
+        </div>
+        <div class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3>Bulk Excel Upload</h3>
+          <p>Hazaron invoices ek saath. No manual entry.</p>
+        </div>
+        <div class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3>Mobile App</h3>
+          <p>Kahin se bhi invoice. 24/7 chatbot support.</p>
+        </div>
+        <div class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Multi-user Access</h3>
+          <p>Poori team ek platform par. PRAL integrated.</p>
+        </div>
+      </div>
+      <div style="background:var(--navy);border-radius:18px;padding:26px 30px;display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <div style="font-size:28px;font-weight:800;color:#fff;">14-din Free Trial</div>
+          <div style="font-size:19px;color:rgba(255,255,255,.65);margin-top:4px;">No card · No setup fee · Start in 10 steps</div>
+        </div>
+        <div style="background:var(--green);color:#fff;font-size:19px;font-weight:700;padding:12px 22px;border-radius:999px;white-space:nowrap;">🆓 Try Free</div>
+      </div>
+    </div>
+    <div class="foot">
+      <span class="site">einvoicepk.com</span>
+      <span style="color:var(--green-bright);font-weight:600;">💬 0325-4180105</span>
+    </div>
   </div>
-  <div class="price-badge">🆓 Try Free</div>
 </div>
-
-<div class="ctas">
-  <div class="cta-btn wa">💬 WhatsApp<span class="small">0325-4180105</span></div>
-  <div class="cta-btn site">🌐 Visit Now<span class="small">einvoicepk.com</span></div>
-</div>
-
-<div class="foot"><span>einvoicepk.com</span><span class="wa">💬 0325-4180105</span></div>
-</div></body></html>
+</body></html>
