@@ -1,22 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <link rel="stylesheet" href="../fonts.css">
 <link rel="stylesheet" href="../theme.css">
-<style>
-  .challan{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 8px 48px rgba(0,0,0,.32);}
-  .challan-head{background:#C00000;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;}
-  .challan-head-title{font-family:var(--f-mono);font-size:13px;letter-spacing:.18em;color:rgba(255,255,255,.85);font-weight:700;}
-  .challan-head-num{font-family:var(--f-mono);font-size:13px;color:rgba(255,255,255,.5);}
-  .challan-body{padding:24px 28px;display:flex;flex-direction:column;gap:0;}
-  .challan-row{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px dashed #E5E7EB;}
-  .challan-row:last-child{border-bottom:none;}
-  .challan-label{font-family:var(--f-mono);font-size:14px;color:#6B7280;letter-spacing:.06em;}
-  .challan-val{font-size:18px;font-weight:700;color:#111827;}
-  .challan-total{background:#FEF2F2;margin:0 -28px;padding:18px 28px;display:flex;justify-content:space-between;align-items:center;}
-  .challan-total-label{font-family:var(--f-mono);font-size:13px;letter-spacing:.1em;color:#C00000;font-weight:700;}
-  .challan-total-amt{font-family:var(--f-display);font-style:italic;font-size:52px;color:#C00000;line-height:1;}
-  .challan-stamp{position:absolute;top:50%;right:28px;transform:translateY(-50%) rotate(-18deg);border:5px solid rgba(192,0,0,.35);border-radius:8px;padding:6px 14px;font-family:var(--f-mono);font-size:22px;font-weight:900;color:rgba(192,0,0,.35);letter-spacing:.12em;pointer-events:none;}
-  .solution{background:var(--green-soft);border:2px solid var(--card-line);border-left:5px solid var(--green-bright);border-radius:16px;padding:20px 24px;display:flex;flex-direction:column;gap:6px;}
-</style>
 </head>
 <body>
 <div class="slide theme-dark">
@@ -26,51 +10,50 @@
       <div class="brand"><span class="logo-chip"><img src="../assets/logo-trimmed.png" alt="einvoicepk.com"></span></div>
       <div class="fbr-chip"><span class="dot"></span> FBR INTEGRATED</div>
     </div>
-    <div class="grow" style="display:flex;flex-direction:column;justify-content:center;gap:28px;">
-      <div class="eyebrow">Dekh lein — Pehle se Pata Hona Behtar Hai ⚠️</div>
-      <div class="challan">
-        <div class="challan-head">
+
+    <div class="grow" style="display:flex;flex-direction:column;justify-content:center;gap:36px;">
+
+      <div class="eyebrow">Yeh Message Aaya To? 😰</div>
+
+      <!-- Fake WhatsApp Chat Bubble -->
+      <div style="background:#111;border-radius:24px;padding:28px 28px 20px;border:1px solid rgba(255,255,255,.08);">
+        <!-- Chat header -->
+        <div style="display:flex;align-items:center;gap:14px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:20px;">
+          <div style="width:52px;height:52px;border-radius:50%;background:#C00000;display:flex;align-items:center;justify-content:center;font-size:24px;flex:none;">🏛️</div>
           <div>
-            <div class="challan-head-title">FEDERAL BOARD OF REVENUE</div>
-            <div class="challan-head-title" style="font-size:11px;margin-top:3px;">NON-COMPLIANCE PENALTY NOTICE</div>
+            <div style="font-size:20px;font-weight:700;color:#fff;">FBR Pakistan</div>
+            <div style="font-size:14px;color:#25D366;font-weight:600;">● Official</div>
           </div>
-          <div class="challan-head-num">REF #FBR-2025-DI</div>
+          <div style="margin-left:auto;font-size:13px;color:rgba(255,255,255,.35);">Aaj, 11:42 AM</div>
         </div>
-        <div class="challan-body" style="position:relative;">
-          <div class="challan-row">
-            <span class="challan-label">BUSINESS</span>
-            <span class="challan-val" style="color:#6B7280;font-style:italic;">Aapka Karobar</span>
+        <!-- Message bubble -->
+        <div style="background:#1F2937;border-radius:4px 18px 18px 18px;padding:18px 20px;max-width:90%;display:inline-block;">
+          <div style="font-size:19px;color:#fff;line-height:1.55;">
+            Aapke business <strong style="color:#FCA5A5;">(NTN: XXXXXXX)</strong> par non-compliance notice jaari kiya gaya hai.<br><br>
+            <strong style="color:#EF4444;">Violation:</strong> Digital invoice nahi di<br>
+            <strong style="color:#EF4444;">Penalty:</strong> Rs 5,00,000<br>
+            <strong style="color:#EF4444;">Action:</strong> Account freeze + audit
           </div>
-          <div class="challan-row">
-            <span class="challan-label">VIOLATION</span>
-            <span class="challan-val">Digital Invoice Nahi</span>
-          </div>
-          <div class="challan-row">
-            <span class="challan-label">IRN / QR CODE</span>
-            <span class="challan-val" style="color:#C00000;">MISSING ❌</span>
-          </div>
-          <div class="challan-row">
-            <span class="challan-label">SRO</span>
-            <span class="challan-val">709(I)/2025</span>
-          </div>
-          <div class="challan-total" style="margin-top:8px;">
-            <div>
-              <div class="challan-total-label">PENALTY AMOUNT</div>
-              <div class="challan-total-label" style="font-size:11px;margin-top:2px;">FIRST DEFAULT</div>
-            </div>
-            <div class="challan-total-amt">Rs 5<span style="font-size:28px;">Lakh</span></div>
-          </div>
-          <div class="challan-stamp">UNPAID</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.3);margin-top:10px;text-align:right;">✓✓ Delivered</div>
         </div>
       </div>
-      <div class="solution">
-        <div style="font-family:var(--f-mono);font-size:13px;letter-spacing:.12em;color:var(--green-bright);font-weight:700;">✅ YEH CHALLAN BACHAO — ABHI</div>
-        <div style="font-size:24px;font-weight:700;color:var(--text);margin-top:4px;">einvoicepk — 3 min mein FBR valid invoice</div>
-        <div style="display:flex;gap:24px;margin-top:8px;flex-wrap:wrap;">
-          <span style="font-size:22px;font-weight:700;color:#fff;">📞 042-36312333</span>
+
+      <!-- Divider -->
+      <div style="display:flex;align-items:center;gap:16px;">
+        <div style="flex:1;height:1px;background:rgba(255,255,255,.1);"></div>
+        <div style="font-family:var(--f-mono);font-size:14px;color:var(--mute);letter-spacing:.1em;">YEH NA HO — ISKA HAL:</div>
+        <div style="flex:1;height:1px;background:rgba(255,255,255,.1);"></div>
+      </div>
+
+      <!-- Solution -->
+      <div style="background:var(--green-soft);border:1px solid var(--card-line);border-radius:20px;padding:26px 28px;display:flex;flex-direction:column;gap:12px;">
+        <div style="font-size:28px;font-weight:800;color:var(--green-bright);">einvoicepk — 3 min mein FBR valid invoice ✅</div>
+        <div style="display:flex;gap:28px;flex-wrap:wrap;">
+          <span style="font-size:22px;font-weight:700;color:var(--text);">📞 042-36312333</span>
           <span style="font-size:22px;font-weight:700;color:var(--green-bright);">💬 0325-4180105</span>
         </div>
       </div>
+
     </div>
     <div class="foot"><span class="site">einvoicepk.com</span><span style="color:var(--green-bright);font-weight:600;">14-din Free Trial</span></div>
   </div>
